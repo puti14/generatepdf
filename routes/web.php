@@ -14,13 +14,12 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PostController::class, 'index'])->name('posts.index');
+Route::resource('posts', PostController::class);
 
-
-Route::resource('/posts', PostController::class);
-
-Route::get('/view', [PostController::class, 'view'])->name('posts.view');
-Route::get('/edit', [PostController::class, 'view'])->name('posts.edit');
-Route::get('/login', [PostController::class, 'view'])->name('posts.login');
+// Rute untuk halaman statis (sebenarnya tidak perlu jika menggunakan resource controller)
+Route::get('/view/{post}', [PostController::class, 'view'])->name('posts.view');
+Route::get('/add', [PostController::class, 'add'])->name('posts.add');
+Route::get('/edit/{post}', [PostController::class, 'edit'])->name('posts.edit');
+Route::get('/login', [PostController::class, 'login'])->name('posts.login');
+Route::get('/pdf', [PostController::class, 'generatePDF'])->name('posts.pdf');
