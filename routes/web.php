@@ -22,3 +22,4 @@ Route::get('/view/{post}', [PostController::class, 'view'])->name('posts.view');
 Route::get('/add', [PostController::class, 'add'])->name('posts.add');
 Route::get('/edit/{post}', [PostController::class, 'edit'])->name('posts.edit');
 Route::get('/login', [PostController::class, 'login'])->name('posts.login');
+Route::get('/pdf', [PostController::class, 'generatePDF'])->name('posts.pdf');

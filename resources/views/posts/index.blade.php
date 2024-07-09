@@ -10,6 +10,7 @@
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="card-title text-primary">Data Posts</h5>
             <a href="{{ route('posts.add') }}" class="btn btn-success">TAMBAH POST</a>
+            <a href="{{ route('posts.pdf') }}" class="btn btn-primary">Generate PDF</a>
         </div>
         <table class="table table-striped table-hover">
             <thead class="bg-primary text-white">
