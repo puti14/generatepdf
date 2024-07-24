@@ -34,13 +34,18 @@ SantriKoding" class="img-fluid" style="max-width: 150px;">
             <div class="col-md-12">
 
                 <div class="text-center mb-4">
+                    @if(isset($user))
+
+                    <h3 class="text-primary">Hello {{ $user->name }}</h3>
+
+                    @else
 
                     <h3 class="text-primary">@yield('header-title')</h3>
+
+                    @endif
 
                     <hr class="bg-primary">
 
                 </div>
-
             </div>
-
         </div>

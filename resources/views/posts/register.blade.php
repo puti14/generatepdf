@@ -6,9 +6,23 @@
 
 @section('content')
 
-<form method="POST" action="{{ route('login') }}">
+<form method="POST" action="{{ route('profile.register') }}">
 
     @csrf
+
+    <div class="mb-3">
+
+        <label for="nama" class="form-label">Nama</label>
+
+        <input type="text" class="form-control" id="nama" placeholder="Nama" name="nama" value="{{ old('name') }}" required autofocus>
+
+        @error('name')
+
+        <span>{{ $message }}</span>
+
+        @enderror
+
+    </div>
 
     <div class="mb-3">
 
@@ -40,30 +54,23 @@
 
     <div class="mb-3">
 
-        <div class="form-check">
+        <label for="cpassword" class="form-label">Konfirmasi password</label>
 
-            <input class="form-check-input" type="checkbox" {{ old('remember') ? 'checked' : '' }} name="remember" id="remember">
+        <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password" name="password_confirmation" required>
 
-            <label class="form-check-label" for="remember">
+        @error('cpassword')
 
-                Remember Me
+        <span>{{ $message }}</span>
 
-            </label>
-
-        </div>
+        @enderror
 
     </div>
 
     <div class="mb-3">
 
-        <button type="submit" class="btn btn-primary">Login</button>
-
-        or
-
-        <a href="{{ route('profile.register') }}">Daftar</a>
+        <button type="submit" class="btn btn-primary">Register</button>
 
     </div>
 
 </form>
-
 @endsection
