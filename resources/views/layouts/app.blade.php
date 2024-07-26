@@ -40,8 +40,7 @@ none;">
 
         <button type="button" class="btn
 btn-danger" onclick="event.preventDefault();
-document.getElementById('logout-form').submit();">Logo
-            ut</button>
+document.getElementById('logout-form').submit();">Logout</button>
 
     </div>
 
